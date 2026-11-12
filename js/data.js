@@ -9,9 +9,9 @@
    ===================================================================== */
 
 window.SITE = {
-  name: "Your Name",
+  name: "Michael Ryan",
   role: "Visual storyteller / Film maker",
-  email: "hello@example.com",
+  email: "the.official.michael.ryan",
   socials: [
     { label: "Instagram", url: "#" },
     { label: "Vimeo", url: "#" },
@@ -78,7 +78,7 @@ window.WORK = [
     title: "Long Light",
     client: "Personal", role: "Photographer", format: "Photo series, 24 frames",
     summary: "Golden hour across the open plains: grain elevators, power lines and the last ten minutes of the day.",
-    photos: [], frames: 6,
+    photos: [], frames: 12,
     image: "", video: "", link: "",
   },
   {

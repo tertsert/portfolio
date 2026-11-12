@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Storyteller — Film, Photo &amp; Design</title>
+  <meta name="description" content="Portfolio of a creative visual storyteller and film maker: films, photography and graphic design.">
+  <meta name="theme-color" content="#0c0a08">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230c0a08' stroke='%23ffb347' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23ffb347' stroke-opacity='.5'/%3E%3Cpath d='M16 16 L27 8' stroke='%23ffb347' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="crt" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-blip" aria-hidden="true"></span>
+      <span data-site="callsign">N-STORY</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work"><span class="wpt" aria-hidden="true"></span>Strip Bay</a>
+      <a href="#frames"><span class="wpt" aria-hidden="true"></span>Contact Sheet</a>
+      <a href="#logbook"><span class="wpt" aria-hidden="true"></span>Logbook</a>
+      <a href="#radio"><span class="wpt" aria-hidden="true"></span>Radio</a>
+    </nav>
+    <div class="clock" aria-label="Current UTC time"><span id="utc">--:--:--</span><b>Z</b></div>
+  </header>
+
+  <div class="metar" aria-hidden="true"><div class="metar-track" id="metar"></div></div>
+
+  <main>
+    <!-- ============ HOME: THE SCOPE ============ -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Radar contact</p>
+        <h1>
+          <span class="name" data-site="name">Your Name</span>
+          <span class="role"><em>Visual Storyteller</em> &amp; Creative Film&nbsp;Maker</span>
+        </h1>
+        <p class="lede" data-site="intro"></p>
+        <div class="ctas">
+          <a class="btn" href="#work">Open the strip bay</a>
+          <a class="btn ghost" href="#radio">Request clearance</a>
+        </div>
+
+        <div class="traffic" aria-labelledby="traffic-h">
+          <div class="traffic-head">
+            <span id="traffic-h">Traffic</span>
+            <span id="traffic-count"></span>
+          </div>
+          <ul id="traffic-list"></ul>
+        </div>
+      </div>
+
+      <div class="scope-col">
+        <div class="scope-frame">
+          <span class="readout tl">RNG 40NM<br><span id="ro-swp">SWP 6.0s</span></span>
+          <span class="readout tr" id="ro-tgt">TGT --</span>
+          <span class="readout bl" id="ro-cursor">BRG ---°<br>RNG --.-NM</span>
+          <span class="readout br">VFR<br><span data-site="base">KSTY</span></span>
+          <div class="scope-wrap">
+            <canvas id="scope" role="img" aria-label="Radar scope. Each target is a project; the same projects are listed under Traffic and in the Strip Bay."></canvas>
+          </div>
+        </div>
+        <div class="console" role="toolbar" aria-label="Scope filters">
+          <button class="key on" data-filter="film" aria-pressed="true"><i class="led film"></i>Film</button>
+          <button class="key on" data-filter="photo" aria-pressed="true"><i class="led photo"></i>Photo</button>
+          <button class="key on" data-filter="design" aria-pressed="true"><i class="led design"></i>Design</button>
+          <span class="console-gap"></span>
+          <button class="key on" data-act="hist" aria-pressed="true">Hist</button>
+          <button class="key" data-act="pause" aria-pressed="false">Hold</button>
+          <button class="key ident" data-act="ident">Ident</button>
+        </div>
+        <p class="scope-hint">Hover a target to read its data block. Click to pull the strip.<br>Yellow waypoints take you to the rest of the site.</p>
+      </div>
+    </section>
+
+    <!-- ============ STRIP BAY ============ -->
+    <section class="section" id="work">
+      <header class="section-head reveal">
+        <p class="kicker">WPT STRIP · Selected work</p>
+        <h2>The strip bay</h2>
+        <p class="section-sub">Every project gets a flight strip. Pull one to open it, or drag strips to re-sequence the bay.</p>
+      </header>
+      <div class="bays" id="bays"></div>
+    </section>
+
+    <!-- ============ CONTACT SHEET ============ -->
+    <section class="section" id="frames">
+      <header class="section-head reveal">
+        <p class="kicker">WPT FRAME · Photography</p>
+        <h2>Contact sheet</h2>
+        <p class="section-sub">Straight off the light table. The circled frames are the picks; hover to mark your own.</p>
+      </header>
+      <div class="sheet reveal" id="sheet"></div>
+    </section>
+
+    <!-- ============ LOGBOOK ============ -->
+    <section class="section" id="logbook">
+      <header class="section-head reveal">
+        <p class="kicker">WPT LOGBK · About</p>
+        <h2>Pilot's logbook</h2>
+      </header>
+      <div class="logbook-wrap reveal">
+        <div class="bio">
+          <p class="bio-big">I make films, photographs and graphics that feel like being there.</p>
+          <p>I'm a storyteller first and a technician second. Whether it's a 60-second spot, a portrait series or a brand identity, I start with the same question: <em>what should this feel like?</em> Then I build the frames to get there.</p>
+          <p>Off the clock I'm usually at the airport. I hold a Private Pilot License, and flying taught me most of what I know about patience, checklists and good light.</p>
+          <div class="stamps" aria-hidden="true">
+            <span class="stamp">PPL<small>ASEL · VFR</small></span>
+            <span class="stamp alt">FILM<small>DIR · DP · EDIT</small></span>
+            <span class="stamp alt2">DESIGN<small>BRAND · PRINT · MOTION</small></span>
+          </div>
+          <p class="bio-loc" data-site="location"></p>
+        </div>
+        <div class="logbook">
+          <div class="logbook-title"><span>Pilot Logbook</span><span>Page 01</span></div>
+          <div class="logbook-scroll">
+            <table>
+              <thead><tr><th>Date</th><th>Aircraft</th><th>Route</th><th>Remarks</th><th class="num">Hrs</th></tr></thead>
+              <tbody id="log-rows"></tbody>
+              <tfoot><tr><td colspan="4">Total time carried forward</td><td class="num" id="log-total"></td></tr></tfoot>
+            </table>
+          </div>
+          <p class="logbook-sign">I certify the entries in this log are true. <span class="sig" data-site="name">Your Name</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RADIO / CONTACT ============ -->
+    <section class="section" id="radio">
+      <header class="section-head reveal">
+        <p class="kicker">WPT RADIO · Contact</p>
+        <h2>Request clearance</h2>
+        <p class="section-sub">Got a story that needs telling? Call it in. I'll read it back.</p>
+      </header>
+      <div class="radio reveal">
+        <div class="radio-stack" aria-hidden="true">
+          <div class="freq"><span class="freq-l">COM1</span><span class="freq-v" id="freq">122.750</span><span class="freq-l">STBY 121.500</span></div>
+          <div class="knobs"><i></i><i></i></div>
+        </div>
+        <form id="clearance" class="radio-form" novalidate>
+          <label>Callsign <small>your name</small><input name="name" required autocomplete="name" placeholder="Jane Doe"></label>
+          <label>Frequency <small>your email</small><input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+          <label>Type <small>what you need</small>
+            <select name="type">
+              <option>Film / video</option>
+              <option>Photography</option>
+              <option>Graphic design</option>
+              <option>A bit of everything</option>
+            </select>
+          </label>
+          <label class="full">Intentions <small>tell me about the project</small><textarea name="msg" rows="4" required placeholder="We're launching something in the spring and want a film that…"></textarea></label>
+          <div class="full radio-actions">
+            <button class="btn" type="submit">Transmit</button>
+            <span class="form-note">Opens your email app with the message ready to send.</span>
+          </div>
+          <output class="readback full" id="readback" aria-live="polite"></output>
+        </form>
+        <ul class="socials" id="socials"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> <span data-site="name">Your Name</span></span>
+    <span class="footer-mid">Squawk 1200 · Blue skies</span>
+    <a href="#top">Return to scope ↑</a>
+  </footer>
+
+  <!-- Strip detail drawer -->
+  <div class="drawer-scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="d-title" tabindex="-1">
+    <button class="drawer-close" id="d-close" aria-label="Close">✕</button>
+    <div id="d-body"></div>
+    <div class="drawer-nav">
+      <button class="key" id="d-prev">◂ Prev TFC</button>
+      <button class="key" id="d-next">Next TFC ▸</button>
+    </div>
+  </aside>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox">
+    <button class="drawer-close" aria-label="Close" data-close>✕</button>
+    <div class="lb-frame" id="lb-frame"></div>
+    <p class="lb-cap" id="lb-cap"></p>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/scope.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,27 +1,20 @@
-# Radar portfolio
+# Portfolio
 
-A static portfolio site styled like an ATC radar scope. There is no build step, so it runs as-is on GitHub Pages.
+A static portfolio site with no build step, hosted on GitHub Pages.
 
 ## Edit your content
 Everything lives in **`js/data.js`**:
-- `SITE`: name, callsign, intro, email, socials and logbook rows.
-- `WORK`: one entry per project. Each entry becomes a radar target, a flight strip in the Strip Bay and, for `type: "photo"`, a row on the contact sheet.
-  - `image: "images/whatever.jpg"`: the cover image. Leave it blank and a generated placeholder is used instead.
-  - `video: "https://player.vimeo.com/video/ID"` or `"https://www.youtube.com/embed/ID"`: plays inside the strip drawer.
-  - `photos: ["images/a.jpg", ...]`: the frames shown on the contact sheet. `pick` is the index of the frame that gets the red circle.
-  - `type` must be `film`, `photo` or `design`. `kind` is the short 3–4 letter tag shown in the data block.
+- `SITE`: your name, role, email, socials, bio paragraphs, CV lines, and the skill buttons (`kit`).
+- `WORK`: one entry per project. Each project shows up in the numbered list and as a blip on the radar.
+  - `type`: `film`, `photo` or `design`.
+  - `image: "images/my-file.jpg"`: the cover image. Leave it empty to get a plain numbered placeholder.
+  - `video: "https://player.vimeo.com/video/ID"` or `"https://www.youtube.com/embed/ID"`: plays when the project is opened.
+  - `photos: ["images/a.jpg", ...]`: for photo projects, the frames shown in the Photographs section.
 
-Put your images in `/images`.
+Put your images in the `images/` folder.
 
-## Preview locally
-```bash
-python3 -m http.server 8000
-```
-Then open http://localhost:8000.
+## Preview
+Open `index.html` in your browser.
 
-## Deploy to GitHub Pages
-1. Push this folder to a GitHub repo. Use `<username>.github.io` for a root URL, or any repo name for `/<repo>/`.
-2. In the repo, go to **Settings → Pages → Build and deployment**, choose *Deploy from a branch*, then pick `main` and `/ (root)`.
-3. Wait about a minute for the site to go live.
-
-`.nojekyll` is included so GitHub serves the files exactly as they are.
+## Publish
+Commit and push to `main`. GitHub Pages updates the live site in about a minute.

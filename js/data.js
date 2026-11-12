@@ -1,170 +1,121 @@
 /* =====================================================================
-   EDIT ME — everything on the site is driven from this file.
-   - SITE: your name, contact, socials, logbook entries
-   - WORK: every project. Each one becomes a radar target, a flight
-     strip, and (for photo series) a row on the contact sheet.
+   EDIT ME — all the words, links and projects on the site live here.
 
-   Images: drop files in /images and set `image: "images/salt-road.jpg"`.
-   Video:  set `video` to an embeddable URL, e.g.
-           "https://player.vimeo.com/video/123456789"
-           "https://www.youtube.com/embed/VIDEO_ID"
-   Photo series: set `photos: ["images/a.jpg", "images/b.jpg", ...]`.
-   Anything left blank falls back to a generated placeholder (uses `hue`).
+   Images: put files in /images, then set  image: "images/my-file.jpg"
+   Video:  video: "https://player.vimeo.com/video/123456789"
+           or     "https://www.youtube.com/embed/VIDEO_ID"
+   Photo series: photos: ["images/a.jpg", "images/b.jpg", ...]
+   Anything left empty shows a plain numbered placeholder.
    ===================================================================== */
 
 window.SITE = {
   name: "Your Name",
-  callsign: "N-STORY",            // shown top-left, like a tail number
-  base: "KSTY",                   // your "home airport" for the METAR ticker
-  title: "Visual Storyteller & Creative Film Maker",
-  intro:
-    "I read light the way pilots read weather: watch it, wait for it, and fly straight into it when it's right. I direct films, shoot photographs and design identities, and every frame has to know where it's headed.",
+  role: "Visual storyteller / Film maker",
   email: "hello@example.com",
-  location: "Based on the ground. Available anywhere.",
   socials: [
     { label: "Instagram", url: "#" },
     { label: "Vimeo", url: "#" },
     { label: "YouTube", url: "#" },
-    { label: "Behance", url: "#" },
   ],
-  // Pilot-logbook style "about" — one row per chapter of your story.
-  logbook: [
-    { date: "2015", aircraft: "Hand-me-down DSLR", route: "HOME → BACKYARD", remarks: "First frames. Mostly blur, three keepers. Hooked.", hours: 40 },
-    { date: "2017", aircraft: "50mm prime", route: "CAMPUS → LOCAL GIGS", remarks: "Shot bands in bad light. Learned to love grain.", hours: 220 },
-    { date: "2019", aircraft: "Pen, paper, Adobe", route: "FREELANCE → SMALL BRANDS", remarks: "First paid identity. Learned that design is listening.", hours: 610 },
-    { date: "2021", aircraft: "Cinema camera", route: "DOC → FESTIVAL CIRCUIT", remarks: "First short doc screened. Cried in the back row.", hours: 940 },
-    { date: "2023", aircraft: "Cessna 172", route: "LOCAL VFR", remarks: "Earned my PPL. Checklists, patience, and reading the sky.", hours: 72 },
-    { date: "NOW", aircraft: "All of the above", route: "ANYWHERE → YOUR STORY", remarks: "Films, photographs and design for people, brands and places.", hours: null },
+  bio: [
+    "I make films, photographs and graphics. I start every project with the same question: what should this feel like? Then I build the frames to get there.",
+    "I've shot documentaries at salt flats and airfields, campaigns for small brands, weddings on old glass, and identities for people who make things by hand.",
+    "Off the clock I'm at the airport. I hold a private pilot licence, and I still can't walk past a radar screen without stopping to look.",
+  ],
+  cv: [
+    { year: "2026", text: "Freelance — film, photo, design" },
+    { year: "2025", text: "Bloom & Co. spring campaign" },
+    { year: "2024", text: "Salt Road — festival selection" },
+    { year: "2023", text: "Private pilot licence" },
+    { year: "2021", text: "First short documentary" },
+    { year: "2019", text: "First identity commission" },
+    { year: "2015", text: "First camera" },
+  ],
+  // The button panel in the bio section. Colors: teal, salmon, mustard, stone, sky, cream
+  kit: [
+    { label: "Direct", color: "teal", text: "Directing short docs, brand films and everything in between." },
+    { label: "Shoot", color: "salmon", text: "Cinematography and photography. Natural light first, always." },
+    { label: "Edit", color: "mustard", text: "Cutting in Premiere and Resolve. Story lives in the edit." },
+    { label: "Color", color: "sky", text: "Grading for mood, not for presets." },
+    { label: "Type", color: "stone", text: "Typography, posters and print. Two colors is usually enough." },
+    { label: "Brand", color: "cream", text: "Identity systems for small businesses that make real things." },
+    { label: "Motion", color: "teal", text: "Title sequences and motion graphics built from real textures." },
+    { label: "Fly", color: "salmon", text: "Private pilot (PPL). Where I learned patience, checklists and how to read the sky." },
   ],
 };
 
 window.WORK = [
-  /* ---------------- FILM ---------------- */
   {
-    id: "SALT24", type: "film", kind: "DOC", year: 2024, hue: 28,
+    id: "salt-road", type: "film", year: 2024,
     title: "Salt Road",
-    client: "Independent",
-    role: "Director · DP · Editor",
-    format: "Short documentary · 12 min",
-    summary:
-      "Three generations of salt harvesters working the same flats their grandparents did. Shot over four summers at the edges of the day, when the pans turn to mirrors.",
-    tools: ["Cinema camera", "Vintage primes", "DaVinci Resolve"],
-    note: "golden hr ✓",
+    client: "Independent", role: "Director, DP, Editor", format: "Short documentary, 12 min",
+    summary: "Three generations of salt harvesters working the same flats their grandparents did. Shot over four summers at the edges of the day, when the pans turn to mirrors.",
     image: "", video: "", link: "",
   },
   {
-    id: "NITE23", type: "film", kind: "DOC", year: 2023, hue: 210,
+    id: "night-shift", type: "film", year: 2023,
     title: "Night Shift",
-    client: "Regional arts grant",
-    role: "Director · Camera",
-    format: "Mini-doc · 6 min",
-    summary:
-      "The line crew who keep a small airfield running after midnight: fuel trucks, frost, flashlights and a lot of coffee. A love letter to the people nobody films.",
-    tools: ["Low-light rig", "Practical lighting", "Premiere"],
-    note: "fuel truck shot!!",
+    client: "Regional arts grant", role: "Director, Camera", format: "Mini-doc, 6 min",
+    summary: "The line crew who keep a small airfield running after midnight: fuel trucks, frost, flashlights and a lot of coffee.",
     image: "", video: "", link: "",
   },
   {
-    id: "BLOOM25", type: "film", kind: "SPOT", year: 2025, hue: 340,
-    title: "Bloom & Co. — Spring",
-    client: "Bloom & Co. Florals",
-    role: "Director · Colorist",
-    format: "Brand film · 60s + cutdowns",
-    summary:
-      "A spring campaign built around one idea: flowers as a way of saying the thing you can't. Macro lenses, window light, and a single continuous take for the hero spot.",
-    tools: ["Macro", "Gimbal", "Resolve"],
-    note: "client fav",
+    id: "bloom", type: "film", year: 2025,
+    title: "Bloom & Co. Spring",
+    client: "Bloom & Co. Florals", role: "Director, Colorist", format: "Brand film, 60s + cutdowns",
+    summary: "A spring campaign about flowers as a way of saying the thing you can't. Macro lenses, window light, one continuous take.",
     image: "", video: "", link: "",
   },
   {
-    id: "VOWS24", type: "film", kind: "WED", year: 2024, hue: 45,
+    id: "two-rivers", type: "film", year: 2024,
     title: "Two Rivers",
-    client: "Private",
-    role: "Filmmaker",
-    format: "Wedding film · 9 min",
-    summary:
-      "A riverside wedding shot entirely on vintage glass with a 16mm look. Less highlight reel, more short film about two families becoming one.",
-    tools: ["Vintage glass", "Super 16 emulation"],
-    note: "16mm look",
+    client: "Private", role: "Filmmaker", format: "Wedding film, 9 min",
+    summary: "A riverside wedding shot entirely on vintage glass. Less highlight reel, more short film about two families becoming one.",
     image: "", video: "", link: "",
   },
-
-  /* ---------------- PHOTO ---------------- */
   {
-    id: "DUSK25", type: "photo", kind: "SER", year: 2025, hue: 22,
+    id: "long-light", type: "photo", year: 2025,
     title: "Long Light",
-    client: "Personal series",
-    role: "Photographer",
-    format: "Photo series · 24 frames",
-    summary:
-      "Golden hour across the open plains: grain elevators, power lines, and the last ten minutes of the day stretched as long as they'll go.",
-    tools: ["35mm", "Medium format"],
-    note: "print these",
-    photos: [], frames: 8, pick: 2,
+    client: "Personal", role: "Photographer", format: "Photo series, 24 frames",
+    summary: "Golden hour across the open plains: grain elevators, power lines and the last ten minutes of the day.",
+    photos: [], frames: 6,
     image: "", video: "", link: "",
   },
   {
-    id: "HANGR24", type: "photo", kind: "PORT", year: 2024, hue: 190,
+    id: "hangar", type: "photo", year: 2024,
     title: "Hangar Portraits",
-    client: "Editorial",
-    role: "Photographer",
-    format: "Portrait series · 16 frames",
-    summary:
-      "Mechanics, instructors and weekend flyers photographed where they work. One light, one backdrop, a lot of grease under the fingernails.",
-    tools: ["Single strobe", "85mm"],
-    note: "hands!",
-    photos: [], frames: 7, pick: 4,
+    client: "Editorial", role: "Photographer", format: "Portrait series, 16 frames",
+    summary: "Mechanics, instructors and weekend flyers photographed where they work. One light, one backdrop.",
+    photos: [], frames: 6,
     image: "", video: "", link: "",
   },
   {
-    id: "RAIN23", type: "photo", kind: "STRT", year: 2023, hue: 255,
+    id: "rain-grammar", type: "photo", year: 2023,
     title: "Rain Grammar",
-    client: "Personal series",
-    role: "Photographer",
-    format: "Street series · 30 frames",
-    summary:
-      "City streets in the rain, read like sentences: reflections as punctuation, umbrellas as commas, neon as the occasional exclamation.",
-    tools: ["35mm", "Night"],
-    note: "neon ✓",
-    photos: [], frames: 8, pick: 5,
+    client: "Personal", role: "Photographer", format: "Street series, 30 frames",
+    summary: "City streets in the rain, read like sentences. Reflections as punctuation, neon as the occasional exclamation.",
+    photos: [], frames: 6,
     image: "", video: "", link: "",
   },
-
-  /* ---------------- DESIGN ---------------- */
   {
-    id: "FIELD25", type: "design", kind: "BRND", year: 2025, hue: 95,
+    id: "fieldnotes", type: "design", year: 2025,
     title: "Fieldnotes Coffee",
-    client: "Fieldnotes Roasters",
-    role: "Identity Designer",
-    format: "Brand identity · packaging",
-    summary:
-      "Identity for a small-batch roaster: a hand-cut wordmark, a stamp system for origins, and bags designed to look like a field journal you'd want to keep.",
-    tools: ["Illustrator", "Letterpress"],
-    note: "stamp system",
+    client: "Fieldnotes Roasters", role: "Identity designer", format: "Identity + packaging",
+    summary: "A hand-cut wordmark, a stamp system for origins, and bags that look like a field journal you'd want to keep.",
     image: "", video: "", link: "",
   },
   {
-    id: "FEST24", type: "design", kind: "PRNT", year: 2024, hue: 12,
-    title: "Festival Poster Series",
-    client: "Riverlight Film Festival",
-    role: "Graphic Designer",
-    format: "Poster series · 5 posters",
-    summary:
-      "Five screen-printed posters for a small film festival. Each one is built from a single frame of a festival film, abstracted until only the color story remains.",
-    tools: ["Screenprint", "Photoshop"],
-    note: "2-color only",
+    id: "riverlight", type: "design", year: 2024,
+    title: "Riverlight Posters",
+    client: "Riverlight Film Festival", role: "Graphic designer", format: "Poster series, 5 screenprints",
+    summary: "Five two-color screenprints, each built from a single frame of a festival film and abstracted until only the color story remains.",
     image: "", video: "", link: "",
   },
   {
-    id: "GRAIN23", type: "design", kind: "MOTN", year: 2023, hue: 300,
-    title: "Grain — Title Sequence",
-    client: "Short film",
-    role: "Motion Designer",
-    format: "Title sequence · 90s",
-    summary:
-      "Opening titles built from scanned film grain and type that resolves like a photo in developer: blurry, then suddenly, perfectly sharp.",
-    tools: ["After Effects", "Film scans"],
-    note: "type in dev bath",
+    id: "grain", type: "design", year: 2023,
+    title: "Grain Titles",
+    client: "Short film", role: "Motion designer", format: "Title sequence, 90s",
+    summary: "Opening titles built from scanned film grain, with type that resolves like a photo in developer.",
     image: "", video: "", link: "",
   },
 ];

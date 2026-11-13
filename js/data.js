@@ -4,7 +4,8 @@
    Images: put files in /images, then set  image: "images/my-file.jpg"
    Video:  video: "https://player.vimeo.com/video/123456789"
            or     "https://www.youtube.com/embed/VIDEO_ID"
-   Photo series: photos: ["images/a.jpg", "images/b.jpg", ...]
+   Gallery images (any project): photos: ["images/a.jpg", "images/b.jpg", ...]
+     These show in the gallery section under the project list.
    Anything left empty shows a plain numbered placeholder.
    ===================================================================== */
 
@@ -31,16 +32,16 @@ window.SITE = {
     { year: "2019", text: "First identity commission" },
     { year: "2015", text: "First camera" },
   ],
-  // The button panel in the bio section. Colors: teal, salmon, mustard, stone, sky, cream
+  // The button panel in the bio section. Colors: yellow, orange, lime, red, green, blue, cream
   kit: [
-    { label: "Direct", color: "teal", text: "Directing short docs, brand films and everything in between." },
-    { label: "Shoot", color: "salmon", text: "Cinematography and photography. Natural light first, always." },
-    { label: "Edit", color: "mustard", text: "Cutting in Premiere and Resolve. Story lives in the edit." },
-    { label: "Color", color: "sky", text: "Grading for mood, not for presets." },
-    { label: "Type", color: "stone", text: "Typography, posters and print. Two colors is usually enough." },
-    { label: "Brand", color: "cream", text: "Identity systems for small businesses that make real things." },
-    { label: "Motion", color: "teal", text: "Title sequences and motion graphics built from real textures." },
-    { label: "Fly", color: "salmon", text: "Private pilot (PPL). Where I learned patience, checklists and how to read the sky." },
+    { label: "Direct", color: "lime", text: "Directing short docs, brand films and everything in between." },
+    { label: "Shoot", color: "orange", text: "Cinematography and photography. Natural light first, always." },
+    { label: "Edit", color: "yellow", text: "Cutting in Premiere and Resolve. Story lives in the edit." },
+    { label: "Color", color: "red", text: "Grading for mood, not for presets." },
+    { label: "Type", color: "green", text: "Typography, posters and print. Two colors is usually enough." },
+    { label: "Brand", color: "blue", text: "Identity systems for small businesses that make real things." },
+    { label: "Motion", color: "orange", text: "Title sequences and motion graphics built from real textures." },
+    { label: "Fly", color: "yellow", text: "Private pilot (PPL). Where I learned patience, checklists and how to read the sky." },
   ],
 };
 

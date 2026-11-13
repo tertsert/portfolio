@@ -1,5 +1,8 @@
 /* A small, low-resolution green radar screen.
    Drawn at half resolution and scaled up so the pixels show. */
+// Newest projects first everywhere (list, radar, gallery). Same-year projects keep their order from data.js.
+(window.WORK || []).sort((a, b) => b.year - a.year);
+
 (() => {
   const canvas = document.getElementById("scope");
   if (!canvas) return;
@@ -10,7 +13,10 @@
   const TAU = Math.PI * 2;
   const slow = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const SCALE = 2;
-  const G = (a) => `rgba(110,255,140,${a})`;
+  const G = (a) => `rgba(154,188,4,${a})`;   // brand lime
+  const Y = (a) => `rgba(255,202,38,${a})`;   // brand yellow, for the highlighted project
+  const BG = "#0d2e17";                       // brand green, darkened
+  const BOOT = 1.5, FADE = 1.4;               // seconds of boot text, seconds of fade-up
 
   let N = 0, R = 0, c = 0;
   let sweep = -Math.PI / 2, last = performance.now(), t = 0;
@@ -30,7 +36,7 @@
     canvas.width = N; canvas.height = N;
     canvas.style.width = N * SCALE + "px";
     canvas.style.height = N * SCALE + "px";
-    ctx.fillStyle = "#071309";
+    ctx.fillStyle = BG;
     ctx.fillRect(0, 0, N, N);
   }
   new ResizeObserver(size).observe(box);
@@ -39,7 +45,7 @@
 
   function boot(el) {
     const lines = ["SCOPE 01", "", "> LOADING TRAFFIC", `> ${String(WORK.length).padStart(2, "0")} TARGETS`, "> OK"];
-    ctx.fillStyle = "#071309"; ctx.fillRect(0, 0, N, N);
+    ctx.fillStyle = BG; ctx.fillRect(0, 0, N, N);
     ctx.fillStyle = G(0.95);
     ctx.font = "10px VT323, monospace";
     const shown = Math.floor(el / 0.22);
@@ -52,11 +58,17 @@
     last = now; t += dt;
     if (!N) return requestAnimationFrame(frame);
     if (!started) started = t;
-    if (t - started < 1.5) { boot(t - started); return requestAnimationFrame(frame); }
+    if (t - started < BOOT) { boot(t - started); return requestAnimationFrame(frame); }
+
+    // fade-up: the boot text dissolves slowly while the radar rises out of the dark
+    const k = Math.min(1, (t - started - BOOT) / FADE);
+    const rise = k * k * (3 - 2 * k);
 
     // phosphor fade: paint over the last frame with a little transparency
-    ctx.fillStyle = "rgba(7,19,9,0.16)";
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = `rgba(13,46,23,${k < 1 ? 0.05 : 0.16})`;
     ctx.fillRect(0, 0, N, N);
+    ctx.globalAlpha = rise;
 
     // rings + cross
     ctx.strokeStyle = G(0.22); ctx.lineWidth = 1;
@@ -93,15 +105,16 @@
         ctx.fillText(b.n, Math.round(x + 4), Math.round(y - 2));
       }
       if (isHot) {
-        if (Math.floor(t * 3) % 2) { ctx.strokeStyle = G(1); ctx.strokeRect(x - 4.5, y - 4.5, 9, 9); }
+        if (Math.floor(t * 3) % 2) { ctx.strokeStyle = Y(1); ctx.strokeRect(x - 4.5, y - 4.5, 9, 9); }
         const label = b.p.title.toUpperCase();
         const w = ctx.measureText(label).width;
         const lx = Math.min(Math.max(4, x - w / 2), N - w - 4);
         const ly = y > c ? y - 10 : y + 16;
-        ctx.fillStyle = "#071309"; ctx.fillRect(lx - 2, ly - 8, w + 4, 10);
-        ctx.fillStyle = G(1); ctx.fillText(label, lx, ly);
+        ctx.fillStyle = BG; ctx.fillRect(lx - 2, ly - 8, w + 4, 10);
+        ctx.fillStyle = Y(1); ctx.fillText(label, lx, ly);
       }
     }
+    ctx.globalAlpha = 1;
     canvas.style.cursor = over ? "pointer" : "crosshair";
     const overId = over ? over.p.id : null;
     if (overId !== lastOver) { lastOver = overId; window.Scope.onHover?.(overId); }

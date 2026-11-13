@@ -9,7 +9,7 @@ Everything lives in **`js/data.js`**:
   - `type`: `film`, `photo` or `design`.
   - `image: "images/my-file.jpg"`: the cover image. Leave it empty to get a plain numbered placeholder.
   - `video: "https://player.vimeo.com/video/ID"` or `"https://www.youtube.com/embed/ID"`: plays when the project is opened.
-  - `photos: ["images/a.jpg", ...]`: for photo projects, the frames shown in the Photographs section.
+  - `photos: ["images/a.jpg", ...]`: the images shown for that project in the gallery section (any type).
 
 Put your images in the `images/` folder.
 

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Visual Storyteller / Film Maker</title>
   <meta name="description" content="Films, photographs and graphic design by a visual storyteller and film maker.">
-  <meta name="theme-color" content="#f2efe8">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f2efe8'/%3E%3Crect x='6' y='6' width='20' height='20' fill='%23e63312'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#F3E8CC">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3E8CC'/%3E%3Crect x='6' y='6' width='20' height='20' fill='%23D42518'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <span class="top-role" data-site="role">Visual storyteller / Film maker</span>
     <nav class="top-nav">
       <a href="#work">Work</a>
-      <a href="#photos">Photos</a>
+      <a href="#gallery">Gallery</a>
       <a href="#bio">Bio</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -30,12 +30,11 @@
       <p class="statement">
         <span data-site="name">Your Name</span> is a
         <mark class="hl red">visual storyteller</mark> and
-        <span class="circled">film maker<svg class="doodle" viewBox="0 0 220 60" preserveAspectRatio="none" aria-hidden="true"><path d="M14 38 C 6 18, 70 4, 130 6 C 190 8, 216 22, 208 38 C 198 56, 90 58, 40 50 C 8 44, 4 26, 40 14 C 70 6, 110 6, 150 10"/></svg></span>
+        <span class="circled">film maker<svg class="doodle" viewBox="0 0 220 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M14 38 C 6 18, 70 4, 130 6 C 190 8, 216 22, 208 38 C 198 56, 90 58, 40 50 C 8 44, 4 26, 40 14 C 70 6, 110 6, 150 10"/></svg></span>
         working across film, photography and graphic design. The work keeps coming back to one question: what should this <em>feel</em> like?
       </p>
       <p class="intro-links">
         <a href="#bio">Read more</a>
-        <a class="tag green" href="#contact">→ Available for work</a>
       </p>
     </section>
 
@@ -45,8 +44,8 @@
         <div class="filters" role="group" aria-label="Filter projects">
           <button class="tag ink on" data-f="all">All</button>
           <button class="tag red" data-f="film">→ Film</button>
-          <button class="tag blue" data-f="photo">→ Photo</button>
-          <button class="tag green" data-f="design">→ Design</button>
+          <button class="tag orange" data-f="photo">→ Photo</button>
+          <button class="tag blue" data-f="design">→ Design</button>
         </div>
         <p class="range"><span id="range">2023 → 2025</span><br>✕ Selected projects</p>
         <ol class="list" id="list"></ol>
@@ -54,7 +53,7 @@
 
       <aside class="scope-col">
         <div class="crt">
-          <div class="crt-label"><span>Scope 01</span><span><i class="rec"></i>Live</span></div>
+          <div class="crt-label"><span>Scope 01</span></div>
           <div class="crt-screen" id="crt-screen">
             <canvas id="scope" aria-label="Radar screen. Each blip is a project from the list."></canvas>
           </div>
@@ -63,16 +62,12 @@
             <span class="knobs" aria-hidden="true"><i></i><i></i></span>
           </div>
         </div>
-        <p class="scope-note">
-          <svg class="arrow" viewBox="0 0 120 40" aria-hidden="true"><path d="M8 36 C 30 38, 60 30, 70 6 M58 14 L70 4 L78 18"/></svg>
-          Every blip is a project. Side project: I fly (PPL) and I can't stop looking at radar screens.
-        </p>
       </aside>
     </section>
 
     <!-- Photos -->
-    <section class="photos" id="photos">
-      <h2 class="sec-title"><span class="tag blue">→ Photo</span> Photographs</h2>
+    <section class="gallery" id="gallery">
+      <h2 class="sec-title"><span class="tag ink" id="gal-tag">Featured</span> <span id="gal-title">Featured project</span></h2>
       <div id="series"></div>
     </section>
 
@@ -88,7 +83,7 @@
       </div>
 
       <div class="panel">
-        <div class="lcd"><span class="lcd-label">Skill</span><span id="lcd">Press a button.</span></div>
+        <div class="lcd"><span class="lcd-label">Skill</span><span class="lcd-text" id="lcd"></span></div>
         <div class="buttons" id="kit"></div>
       </div>
     </section>

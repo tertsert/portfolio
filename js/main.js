@@ -112,7 +112,7 @@
   const GAL = {
     all: { tag: "Featured", cls: "ink", title: "Featured project" },
     film: { tag: "→ Film", cls: "red", title: "Films" },
-    photo: { tag: "→ Photo", cls: "orange", title: "Photographs" },
+    photo: { tag: "→ Photo", cls: "yellow", title: "Photographs" },
     design: { tag: "→ Design", cls: "blue", title: "Design" },
   };
   let featured = null;

@@ -54,6 +54,7 @@ img { display: block; max-width: 100%; }
 }
 .tag.red { background: var(--red); }
 .tag.orange { background: var(--orange); }
+.tag.yellow { background: var(--yellow); color: var(--ink); }
 .tag.lime { background: var(--lime); color: var(--green); }
 .tag.blue { background: var(--blue); }
 .tag.green { background: var(--green); }
@@ -133,7 +134,8 @@ mark.hl.red { background: var(--red); }
 .row-head .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .row-head .k { font-size: 11px; font-weight: 700; padding: 0 5px; color: var(--paper); }
 .row.film .k { background: var(--red); }
-.row.photo .k { background: var(--orange); }
+.row.photo .k { background: var(--yellow); color: var(--ink); }
+.row.open.photo .k { background: var(--ink); color: var(--yellow); }
 .row.design .k { background: var(--blue); }
 .row-head .y { text-align: right; color: var(--ink-2); }
 .row-head:hover, .row.hot .row-head { background: var(--ink); color: var(--paper); }
@@ -172,7 +174,7 @@ mark.hl.red { background: var(--red); }
 }
 .ph b { font-size: clamp(48px, 7vw, 96px); line-height: .8; letter-spacing: -.04em; }
 .ph.film { --c: var(--red); color: var(--cream); }
-.ph.photo { --c: var(--orange); }
+.ph.photo { --c: var(--yellow); }
 .ph.design { --c: var(--blue); color: var(--cream); }
 .cover { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 

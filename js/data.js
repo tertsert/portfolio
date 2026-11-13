@@ -35,13 +35,14 @@ window.SITE = {
   // The button panel in the bio section. Colors: yellow, orange, red, green, blue, cream.
   // wide: true makes a button take two spots (use it on the last one when the count is odd).
   kit: [
+    { label: "Direct", color: "orange", text: "Directing short docs, brand films and everything in between." },
     { label: "Shoot", color: "red", text: "Cinematography and photography. Natural light first, always." },
     { label: "Edit", color: "yellow", text: "Cutting in Premiere and Resolve. Story lives in the edit." },
     { label: "Color", color: "blue", text: "Grading for mood, not for presets." },
-    { label: "Type", color: "orange", text: "Typography, posters and print. Two colors is usually enough." },
-    { label: "Brand", color: "green", text: "Identity systems for small businesses that make real things." },
-    { label: "Motion", color: "cream", text: "Title sequences and motion graphics built from real textures." },
-    { label: "Fly", color: "yellow", wide: true, text: "Private pilot (PPL). Where I learned patience, checklists and how to read the sky." },
+    { label: "Type", color: "green", text: "Typography, posters and print. Two colors is usually enough." },
+    { label: "Brand", color: "cream", text: "Identity systems for small businesses that make real things." },
+    { label: "Motion", color: "red", text: "Title sequences and motion graphics built from real textures." },
+    { label: "Fly", color: "orange", text: "Private pilot (PPL). Where I learned patience, checklists and how to read the sky." },
   ],
 };
 

@@ -18,6 +18,3 @@ Open `index.html` in your browser.
 
 ## Publish
 Commit and push to `main`. GitHub Pages updates the live site in about a minute.
-
-## Making browsers pick up changes
-Browsers keep copies of `css/style.css` and the `js/` files for a while, so visitors (and you) can see an old version after an update. In `index.html`, each of those links ends in a version tag such as `?v=2026-11-13b`. When you change CSS or JS, update that date (all four links) and browsers will load the new files straight away. Changes to `index.html` itself don't need this.

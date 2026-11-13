@@ -9,12 +9,13 @@
   --lime: #9ABC04;
   --blue: #1726D9;
 
-  /* roles (built from the brand colors) */
-  --paper: var(--cream);
-  --paper-2: #e6d7b0;        /* cream, one shade darker: device casings */
-  --ink: var(--green);       /* all text is brand green */
-  --ink-2: rgba(25, 83, 43, .7);
-  --rule: rgba(25, 83, 43, .25);
+  /* neutrals (not brand colors): background, text, lines */
+  --paper: #f2efe8;          /* page background */
+  --paper-2: #e7e3da;        /* slightly darker paper */
+  --casing: #d8d2c3;         /* radar + skills panel casings */
+  --ink: #141414;            /* text */
+  --ink-2: #5d5a54;          /* secondary text */
+  --rule: #c9c4b9;           /* divider lines */
   --screen: #0d2e17;         /* brand green, darkened for the radar screen */
 
   --mono: "Courier Prime", "Courier New", ui-monospace, monospace;
@@ -162,7 +163,7 @@ mark.hl.red { background: var(--red); }
   display: flex; align-items: flex-end; justify-content: space-between;
   padding: 10px 12px;
   background-color: var(--c, var(--paper-2));
-  background-image: radial-gradient(rgba(25,83,43,.2) 1px, transparent 1.4px);
+  background-image: radial-gradient(rgba(20,20,20,.18) 1px, transparent 1.4px);
   background-size: 6px 6px;
   color: var(--ink);
   font: 700 13px var(--mono);
@@ -191,7 +192,7 @@ mark.hl.red { background: var(--red); }
 /* ---------- the CRT ---------- */
 .scope-col { position: sticky; top: 20px; align-self: start; }
 .crt {
-  background: var(--paper-2);
+  background: var(--casing);
   border: 2px solid var(--ink);
   border-radius: 14px;
   padding: 12px 14px 10px;
@@ -256,7 +257,7 @@ mark.hl.red { background: var(--red); }
 .frame:hover { outline: 2px solid var(--red); outline-offset: 2px; }
 
 .lightbox { border: 2px solid var(--ink); padding: 14px; background: var(--paper); max-width: min(900px, 92vw); width: 100%; box-shadow: 8px 8px 0 var(--ink); }
-.lightbox::backdrop { background: rgba(243, 232, 204, .88); }
+.lightbox::backdrop { background: rgba(242, 239, 232, .88); }
 .lightbox .ph { aspect-ratio: 3 / 2; }
 .lightbox img { width: 100%; max-height: 78vh; object-fit: contain; }
 #lb-cap { margin: 10px 0 0; font-size: 13px; text-transform: uppercase; }
@@ -275,7 +276,7 @@ mark.hl.red { background: var(--red); }
   margin-top: 48px;
   max-width: 560px;
   padding: 18px;
-  background: var(--paper-2);
+  background: var(--casing);
   border: 2px solid var(--ink);
   border-radius: 16px;
   box-shadow: 6px 6px 0 var(--ink);

@@ -320,6 +320,7 @@ mark.hl.red { background: var(--red); }
 .btn-key.green { --c: var(--green); color: var(--cream); }
 .btn-key.blue { --c: var(--blue); color: var(--cream); }
 .btn-key.cream { --c: var(--cream); }
+.btn-key.wide { grid-column: span 2; }
 
 /* contact */
 .mail-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; margin: 0; }

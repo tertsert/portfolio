@@ -32,16 +32,16 @@ window.SITE = {
     { year: "2019", text: "First identity commission" },
     { year: "2015", text: "First camera" },
   ],
-  // The button panel in the bio section. Colors: yellow, orange, lime, red, green, blue, cream
+  // The button panel in the bio section. Colors: yellow, orange, red, green, blue, cream.
+  // wide: true makes a button take two spots (use it on the last one when the count is odd).
   kit: [
-    { label: "Direct", color: "lime", text: "Directing short docs, brand films and everything in between." },
-    { label: "Shoot", color: "orange", text: "Cinematography and photography. Natural light first, always." },
+    { label: "Shoot", color: "red", text: "Cinematography and photography. Natural light first, always." },
     { label: "Edit", color: "yellow", text: "Cutting in Premiere and Resolve. Story lives in the edit." },
-    { label: "Color", color: "red", text: "Grading for mood, not for presets." },
-    { label: "Type", color: "green", text: "Typography, posters and print. Two colors is usually enough." },
-    { label: "Brand", color: "blue", text: "Identity systems for small businesses that make real things." },
-    { label: "Motion", color: "orange", text: "Title sequences and motion graphics built from real textures." },
-    { label: "Fly", color: "yellow", text: "Private pilot (PPL). Where I learned patience, checklists and how to read the sky." },
+    { label: "Color", color: "blue", text: "Grading for mood, not for presets." },
+    { label: "Type", color: "orange", text: "Typography, posters and print. Two colors is usually enough." },
+    { label: "Brand", color: "green", text: "Identity systems for small businesses that make real things." },
+    { label: "Motion", color: "cream", text: "Title sequences and motion graphics built from real textures." },
+    { label: "Fly", color: "yellow", wide: true, text: "Private pilot (PPL). Where I learned patience, checklists and how to read the sky." },
   ],
 };
 

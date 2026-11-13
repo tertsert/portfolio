@@ -182,7 +182,7 @@
   lcd.innerHTML = (SITE.kit || []).map((k) => `<span class="sizer" aria-hidden="true">${esc(k.text)}</span>`).join("") + `<span class="live" aria-live="polite">Press a button.</span>`;
   const lcdLive = lcd.querySelector(".live");
   let typing;
-  $("#kit").innerHTML = (SITE.kit || []).map((k, i) => `<button class="btn-key ${esc(k.color)}" data-i="${i}">${esc(k.label)}</button>`).join("");
+  $("#kit").innerHTML = (SITE.kit || []).map((k, i) => `<button class="btn-key ${esc(k.color)}${k.wide ? " wide" : ""}" data-i="${i}">${esc(k.label)}</button>`).join("");
   $("#kit").addEventListener("click", (e) => {
     const b = e.target.closest(".btn-key");
     if (!b) return;
